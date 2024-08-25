@@ -5,6 +5,8 @@ import { EBank, ETransferType } from './constants/enum';
 import vcbbank from './assets/images/vcbbank.png';
 import viettinbank from './assets/images/viettinbank.png';
 import vpbank from './assets/images/vpbank.png';
+import Navbar from '~/components/Navbar';
+import ViewVCB from './components/ViewVCB';
 
 function App() {
   const [form, setForm] = useState({
@@ -38,137 +40,136 @@ function App() {
 
   console.log(form);
   return (
-    <div className='main .light__theme'>
-      <div className='container'>
-        <div className='title'>
-          <h1>Fake bill chuyển tiền ngân hàng</h1>
-        </div>
-        <div className='form'>
-          <div className='item'>
-            <label>Số tài khoản</label>
-            <Input
-              type='text'
-              name='accountNumber'
-              value={form.accountNumber}
-              onChange={handleChange}
-              placeholder='Ví dụ: 1212004'
-            />
+    <>
+      <Navbar />
+      <div className='main .light__theme'>
+        <div className='container'>
+          <div className='title'>
+            <h1>Fake bill chuyển tiền ngân hàng</h1>
           </div>
-          <div className='item'>
-            <label>Tên người nhận</label>
-            <Input
-              type='text'
-              name='recipientName'
-              value={form.recipientName}
-              onChange={handleChange}
-              placeholder='Ví dụ: Nguyễn Văn A'
-            />
-          </div>
-          <div className='item'>
-            <label>Số tiền</label>
-            <Input
-              type='number'
-              name='amount'
-              value={form.amount}
-              onChange={handleChange}
-              placeholder='Ví dụ: 100000'
-            />
-          </div>
-          <div className='item'>
-            <label>Ngân hàng nhận</label>
-            <Select
-              name='bankName'
-              value={form.bankName}
-              onChange={handleChange}
-            >
-              {bankOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </Select>
-          </div>
-          <div className='item'>
-            <label>Loại chuyển tiền</label>
-            <Select
-              name='transferType'
-              value={form.transferType}
-              onChange={handleChange}
-            >
-              {transferOptions.map((option) => (
-                <option key={option} value={option}>
-                  {ETransferType[option]}
-                </option>
-              ))}
-            </Select>
-          </div>
-          <div className='item'>
-            <label>Thông báo số dư</label>
-            <Select
-              name='balanceNotification'
-              value={form.balanceNotification}
-              onChange={handleChange}
-            >
-              <option value={false}>Không</option>
-              <option value={true}>Có</option>
-            </Select>
-          </div>
-          <div className='item'>
-            <label>Thời gian điện thoại</label>
-            <Input
-              type='text'
-              name='phoneTime'
-              value={form.phoneTime}
-              onChange={handleChange}
-              placeholder='Ví dụ: 21:15'
-            />
-          </div>
-          <div className='item'>
-            <label>Thời gian trên bill</label>
-            <Input
-              type='text'
-              name='billTime'
-              value={form.billTime}
-              onChange={handleChange}
-              placeholder='Ví dụ: 21:15 Thứ Bảy 24/08/2024'
-            />
-          </div>
-          <div className='item'>
-            <label>Nội dung chuyển khoản</label>
-            <Input
-              type='text'
-              name='transferNote'
-              value={form.transferNote}
-              onChange={handleChange}
-              placeholder='Ví dụ: NGUYEN VAN B chuyen tien'
-            />
-          </div>
-          <div className='item'>
-            <label>Mã giao dịch</label>
-            <Input
-              type='text'
-              name='transactionCode'
-              value={form.transactionCode}
-              onChange={handleChange}
-              placeholder='Ví dụ: 204951390'
-            />
-          </div>
-        </div>
-        <div className='control'>
-          <Button colorScheme='yellow' className='btn'>
-            Xem Bill
-          </Button>
-          <div className='view'>
-            <div className='background'>
-              <img src={imageSrc} alt='' />
+          <div className='form'>
+            <div className='item'>
+              <label>Số tài khoản</label>
+              <Input
+                type='text'
+                name='accountNumber'
+                value={form.accountNumber}
+                onChange={handleChange}
+                placeholder='Ví dụ: 1212004'
+              />
+            </div>
+            <div className='item'>
+              <label>Tên người nhận</label>
+              <Input
+                type='text'
+                name='recipientName'
+                value={form.recipientName}
+                onChange={handleChange}
+                placeholder='Ví dụ: Nguyễn Văn A'
+              />
+            </div>
+            <div className='item'>
+              <label>Số tiền</label>
+              <Input
+                type='number'
+                name='amount'
+                value={form.amount}
+                onChange={handleChange}
+                placeholder='Ví dụ: 100000'
+              />
+            </div>
+            <div className='item'>
+              <label>Ngân hàng nhận</label>
+              <Select
+                name='bankName'
+                value={form.bankName}
+                onChange={handleChange}
+              >
+                {bankOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </Select>
+            </div>
+            <div className='item'>
+              <label>Loại chuyển tiền</label>
+              <Select
+                name='transferType'
+                value={form.transferType}
+                onChange={handleChange}
+              >
+                {transferOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {ETransferType[option]}
+                  </option>
+                ))}
+              </Select>
+            </div>
+            <div className='item'>
+              <label>Thông báo số dư</label>
+              <Select
+                name='balanceNotification'
+                value={form.balanceNotification}
+                onChange={handleChange}
+              >
+                <option value={false}>Không</option>
+                <option value={true}>Có</option>
+              </Select>
+            </div>
+            <div className='item'>
+              <label>Thời gian điện thoại</label>
+              <Input
+                type='text'
+                name='phoneTime'
+                value={form.phoneTime}
+                onChange={handleChange}
+                placeholder='Ví dụ: 21:15'
+              />
+            </div>
+            <div className='item'>
+              <label>Thời gian trên bill</label>
+              <Input
+                type='text'
+                name='billTime'
+                value={form.billTime}
+                onChange={handleChange}
+                placeholder='Ví dụ: 21:15 Thứ Bảy 24/08/2024'
+              />
+            </div>
+            <div className='item'>
+              <label>Nội dung chuyển khoản</label>
+              <Input
+                type='text'
+                name='transferNote'
+                value={form.transferNote}
+                onChange={handleChange}
+                placeholder='Ví dụ: NGUYEN VAN B chuyen tien'
+              />
+            </div>
+            <div className='item'>
+              <label>Mã giao dịch</label>
+              <Input
+                type='text'
+                name='transactionCode'
+                value={form.transactionCode}
+                onChange={handleChange}
+                placeholder='Ví dụ: 204951390'
+              />
             </div>
           </div>
-          <Button colorScheme='blue' className='btn'>
-            Tạo Bill
-          </Button>
+          <div className='control'>
+            <Button colorScheme='yellow' className='btn'>
+              Xem Bill
+            </Button>
+            <ViewVCB form={form} imageSrc={imageSrc} />
+            <Button colorScheme='blue' className='btn'>
+              Tạo Bill
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

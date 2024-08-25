@@ -30,12 +30,47 @@ button.btn {
     display: block;
     margin: 1.5rem auto;
     width: 35%;
-    max-width: 375px;
+    max-width: 372px;
 }
 
 .view {
+    position: relative;
     margin: auto;
-    max-width: 375px;
+    width: 372px;
+
+    .success {
+        position: absolute;
+        top: 14.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 400;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-wrap: nowrap;
+        letter-spacing: 0.1px;
+    }
+
+    .amount {
+        position: absolute;
+        top: 16rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #72BF00;
+        font-size: 1.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .bill_time {
+        position: absolute;
+        top: 19rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #79878D;
+        font-size: 11px;
+
+    }
 }
 
 @media (max-width: 768px) {
