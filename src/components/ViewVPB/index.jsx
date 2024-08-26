@@ -1,28 +1,26 @@
 import React from 'react';
 import logo from '../../assets/logos/vcb.webp';
-import imageSrc from '~/assets/images/vcbbank.png';
+import imageSrc from '~/assets/images/vpbank.png';
 
-const ViewVCB = ({ form }) => {
+const ViewVPB = ({ form }) => {
+  function formatNumber(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
   return (
-    <div className='view vietcombank'>
+    <div className='view vpbank'>
       <div className='background'>
         <img src={imageSrc} alt='' />
       </div>
       <div className='phone_time'>{form.phoneTime}</div>
-      {/* <div className='logo'>
-        <img src={logo} alt='' />
-      </div> */}
-      <div className='success'>chuyển khoản thành công</div>
-      <div className='amount'>{`${parseInt(
-        form.amount
-      )?.toLocaleString()} vnd`}</div>
+      <div className='amount'>{`${formatNumber(parseInt(form.amount))} đ`}</div>
       <div className='bill_time'>{form.billTime}</div>
       <div className='recipient'>{form.recipientName}</div>
       <div className='account_number'>{form.accountNumber}</div>
       <div className='transaction_code'>{form.transactionCode}</div>
       <div className='transfer_note'>{form.transferNote}</div>
+      <div className='transfer_type'>chuyển nhanh napas 247</div>
     </div>
   );
 };
 
-export default ViewVCB;
+export default ViewVPB;

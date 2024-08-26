@@ -5,7 +5,6 @@
 .container {
     width: 90%;
     margin: auto;
-
 }
 
 .title h1 {
@@ -37,6 +36,32 @@ button.btn {
     position: relative;
     margin: auto;
     width: 372px;
+    --deviation: 0px;
+}
+
+.view .capture {
+    --deviation: 1px;
+}
+
+.view.vietcombank {
+    .phone_time {
+        position: absolute;
+        top: 0.8rem;
+        left: 1.2rem;
+        font-weight: 400;
+        color: #FCFCFC;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    .logo {
+        position: absolute;
+        top: 1rem;
+        left: 3.4rem;
+        width: 9px;
+        border-radius: 50%;
+        display: flex;
+    }
 
     .success {
         position: absolute;
@@ -45,7 +70,7 @@ button.btn {
         transform: translateX(-50%);
         font-weight: 400;
         color: #fff;
-        font-size: 14px;
+        font-size: 13px;
         text-transform: uppercase;
         text-wrap: nowrap;
         letter-spacing: 0.1px;
@@ -57,24 +82,350 @@ button.btn {
         left: 50%;
         transform: translateX(-50%);
         color: #72BF00;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 500;
         text-transform: uppercase;
     }
 
     .bill_time {
         position: absolute;
-        top: 19rem;
+        top: 18.7rem;
         left: 50%;
         transform: translateX(-50%);
         color: #79878D;
         font-size: 11px;
+        font-weight: 500;
 
+    }
+
+    .recipient {
+        position: absolute;
+        top: 22.1rem;
+        right: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+        font-size: 14px;
+        max-width: 13rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        text-align: end;
+
+    }
+
+    .account_number {
+        position: absolute;
+        top: 25.8rem;
+        right: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+        font-size: 14px;
+        max-width: 13rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        text-align: end;
+    }
+
+    .transaction_code {
+        position: absolute;
+        top: 35.4rem;
+        right: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+        font-size: 14px;
+        max-width: 13rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        text-align: end;
+    }
+
+    .transfer_note {
+        position: absolute;
+        top: 39.6rem;
+        right: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+        font-size: 14px;
+        max-width: 13rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        text-align: end;
     }
 }
 
-@media (max-width: 768px) {
+.view.momo {
+    .transfer_note {
+        position: absolute;
+        top: 7.6rem;
+        left: 6rem;
+        font-weight: 500;
+        color: #79878D;
+        font-size: 14px;
+        height: 3rem;
+    }
+
+    .amount {
+        position: absolute;
+        top: 9rem;
+        left: 6rem;
+        color: #000;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .bill_time {
+        position: absolute;
+        top: 14.1rem;
+        right: 1.78rem;
+        color: #000;
+        font-weight: 600;
+        font-size: 11px;
+    }
+
+    .transaction_code {
+        position: absolute;
+        top: 16.9rem;
+        right: 3rem;
+        font-weight: 500;
+        color: #000;
+        font-size: 14px;
+        max-width: 13rem;
+        height: 3rem;
+    }
+
+    .account_number_1 {
+        position: absolute;
+        top: 18.8rem;
+        right: 1.78rem;
+        font-weight: 500;
+        color: #000;
+        font-size: 14px;
+        height: 3rem;
+    }
+
+    .recipient {
+        position: absolute;
+        top: 26.9rem;
+        right: 1.78rem;
+        font-weight: 500;
+        color: #000;
+        font-size: 14px;
+        height: 3rem;
+        display: flex;
+    }
+
+    .account_number_2 {
+        position: absolute;
+        top: 31.25rem;
+        right: 1.78rem;
+        font-weight: 500;
+        color: #000;
+        font-size: 14px;
+        height: 3rem;
+        display: flex;
+    }
+
+    .success {
+        position: absolute;
+        top: 20.74rem;
+        right: 1.78rem;
+        font-weight: 500;
+        color: #000;
+        font-size: 14px;
+        height: 3rem;
+        display: flex;
+        text-transform: capitalize;
+    }
+}
+
+.view.viettinbank {
+    .phone_time {
+        position: absolute;
+        top: 1.15rem;
+        left: 1.7rem;
+        font-weight: 500;
+        color: #FCFCFC;
+        font-size: 13px;
+        text-transform: uppercase;
+
+    }
+
+    .bill_time {
+        position: absolute;
+        top: 9.1rem;
+        right: 1rem;
+        color: #79878D;
+        font-size: 11px;
+        font-weight: 500;
+
+    }
+
+    .transaction_code {
+        position: absolute;
+        top: 10rem;
+        right: 1rem;
+        font-weight: 500;
+        color: #79878D;
+        font-size: 12px;
+    }
+
+    .account_number_sender {
+        position: absolute;
+        top: 17.3rem;
+        right: 1rem;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .recipient_sender {
+        position: absolute;
+        top: 18.4rem;
+        right: 1rem;
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+    .account_number {
+        position: absolute;
+        top: 20.4rem;
+        right: 1rem;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .recipient {
+        position: absolute;
+        top: 21.5rem;
+        right: 1rem;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .amount {
+        position: absolute;
+        top: 25.75rem;
+        right: 1rem;
+        font-weight: bold;
+        font-size: 12px;
+        color: #045892;
+        text-transform: uppercase;
+    }
+
+    .amount_text::first-letter {
+        text-transform: uppercase;
+    }
+
+    .amount_text {
+        position: absolute;
+        top: 26.85rem;
+        right: 1rem;
+        font-weight: 500;
+        font-size: 12px;
+        color: #045892;
+    }
+
+    .transfer_note {
+        position: absolute;
+        top: 31rem;
+        right: 1rem;
+        font-weight: 400;
+        font-size: 12px;
+    }
+}
+
+.view.vpbank {
+    .phone_time {
+        position: absolute;
+        top: 1.15rem;
+        left: 1.7rem;
+        font-weight: 500;
+        color: #000;
+        font-size: 13px;
+        text-transform: uppercase;
+
+    }
+
+    .amount {
+        position: absolute;
+        top: 11.3rem;
+        left: 4.7rem;
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: 0.1px;
+    }
+
+    .recipient {
+        position: absolute;
+        top: 17.75rem;
+        left: 4.7rem;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.1px;
+        text-transform: uppercase;
+    }
+
+    .account_number {
+        position: absolute;
+        top: 18.95rem;
+        left: 4.7rem;
+        font-weight: 600;
+        font-size: 14px;
+        color: #79878D;
+    }
+
+    .bill_time {
+        position: absolute;
+        top: 23rem;
+        right: 1.7rem;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .transfer_note {
+        position: absolute;
+        top: 25.3rem;
+        right: 1.7rem;
+        max-width: 20rem;
+        font-weight: 600;
+        height: 3rem;
+        font-size: 13px;
+        text-align: end;
+        display: flex;
+        align-items: center;
+    }
+
+    .transfer_type {
+        position: absolute;
+        top: 29.15rem;
+        right: 1.7rem;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .transfer_type::first-letter {
+        text-transform: uppercase;
+    }
+
+    .transaction_code {
+        position: absolute;
+        top: 32.3rem;
+        right: 1.7rem;
+        font-weight: 600;
+        font-size: 13px
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
     .form {
         grid-template-columns: 1fr;
+        margin: 0 0.5rem;
+
     }
 }
