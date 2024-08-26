@@ -39,14 +39,14 @@ button.btn {
     --deviation: 0px;
 }
 
-.view .capture {
-    --deviation: 1px;
+.view.capture {
+    --deviation: 0.51rem;
 }
 
 .view.vietcombank {
     .phone_time {
         position: absolute;
-        top: 0.8rem;
+        top: calc(0.76rem - var(--deviation));
         left: 1.2rem;
         font-weight: 400;
         color: #FCFCFC;
@@ -54,18 +54,9 @@ button.btn {
         text-transform: uppercase;
     }
 
-    .logo {
-        position: absolute;
-        top: 1rem;
-        left: 3.4rem;
-        width: 9px;
-        border-radius: 50%;
-        display: flex;
-    }
-
     .success {
         position: absolute;
-        top: 14.5rem;
+        top: calc(14.5rem - var(--deviation));
         left: 50%;
         transform: translateX(-50%);
         font-weight: 400;
@@ -78,7 +69,7 @@ button.btn {
 
     .amount {
         position: absolute;
-        top: 16rem;
+        top: calc(16rem - var(--deviation));
         left: 50%;
         transform: translateX(-50%);
         color: #72BF00;
@@ -89,33 +80,31 @@ button.btn {
 
     .bill_time {
         position: absolute;
-        top: 18.7rem;
+        top: calc(18.7rem - var(--deviation));
         left: 50%;
         transform: translateX(-50%);
         color: #79878D;
         font-size: 11px;
         font-weight: 500;
-
     }
 
     .recipient {
         position: absolute;
-        top: 22.1rem;
+        top: calc(23.55rem - var(--deviation));
         right: 1.2rem;
+        transform: translateY(-50%);
         font-weight: 500;
         color: #fff;
         font-size: 14px;
         max-width: 13rem;
-        height: 3rem;
         display: flex;
         align-items: center;
         text-align: end;
-
     }
 
     .account_number {
         position: absolute;
-        top: 25.8rem;
+        top: calc(25.72rem - var(--deviation));
         right: 1.2rem;
         font-weight: 500;
         color: #fff;
@@ -129,13 +118,13 @@ button.btn {
 
     .transaction_code {
         position: absolute;
-        top: 35.4rem;
+        top: calc(36.85rem - var(--deviation));
         right: 1.2rem;
+        transform: translateY(-50%);
         font-weight: 500;
         color: #fff;
         font-size: 14px;
         max-width: 13rem;
-        height: 3rem;
         display: flex;
         align-items: center;
         text-align: end;
@@ -143,7 +132,7 @@ button.btn {
 
     .transfer_note {
         position: absolute;
-        top: 39.6rem;
+        top: calc(39.6rem - var(--deviation));
         right: 1.2rem;
         font-weight: 500;
         color: #fff;
@@ -159,17 +148,16 @@ button.btn {
 .view.momo {
     .transfer_note {
         position: absolute;
-        top: 7.6rem;
+        top: calc(7.6rem - var(--deviation));
         left: 6rem;
         font-weight: 500;
         color: #79878D;
         font-size: 14px;
-        height: 3rem;
     }
 
     .amount {
         position: absolute;
-        top: 9rem;
+        top: calc(9rem - var(--deviation));
         left: 6rem;
         color: #000;
         font-weight: 700;
@@ -178,7 +166,7 @@ button.btn {
 
     .bill_time {
         position: absolute;
-        top: 14.1rem;
+        top: calc(14.1rem - var(--deviation));
         right: 1.78rem;
         color: #000;
         font-weight: 600;
@@ -187,56 +175,49 @@ button.btn {
 
     .transaction_code {
         position: absolute;
-        top: 16.9rem;
+        top: calc(16.9rem - var(--deviation));
         right: 3rem;
         font-weight: 500;
         color: #000;
         font-size: 14px;
         max-width: 13rem;
-        height: 3rem;
     }
 
     .account_number_1 {
         position: absolute;
-        top: 18.8rem;
+        top: calc(18.8rem - var(--deviation));
         right: 1.78rem;
         font-weight: 500;
         color: #000;
         font-size: 14px;
-        height: 3rem;
     }
 
     .recipient {
         position: absolute;
-        top: 26.9rem;
+        top: calc(26.9rem - var(--deviation));
         right: 1.78rem;
         font-weight: 500;
         color: #000;
         font-size: 14px;
-        height: 3rem;
         display: flex;
     }
 
     .account_number_2 {
         position: absolute;
-        top: 31.25rem;
+        top: calc(31.25rem - var(--deviation));
         right: 1.78rem;
         font-weight: 500;
         color: #000;
         font-size: 14px;
-        height: 3rem;
-        display: flex;
     }
 
     .success {
         position: absolute;
-        top: 20.74rem;
+        top: calc(20.74rem - var(--deviation));
         right: 1.78rem;
         font-weight: 500;
         color: #000;
         font-size: 14px;
-        height: 3rem;
-        display: flex;
         text-transform: capitalize;
     }
 }
@@ -244,28 +225,26 @@ button.btn {
 .view.viettinbank {
     .phone_time {
         position: absolute;
-        top: 1.15rem;
+        top: calc(1.16rem - var(--deviation));
         left: 1.7rem;
         font-weight: 500;
         color: #FCFCFC;
         font-size: 13px;
         text-transform: uppercase;
-
     }
 
     .bill_time {
         position: absolute;
-        top: 9.1rem;
+        top: calc(9.1rem - var(--deviation));
         right: 1rem;
         color: #79878D;
         font-size: 11px;
         font-weight: 500;
-
     }
 
     .transaction_code {
         position: absolute;
-        top: 10rem;
+        top: calc(10rem - var(--deviation));
         right: 1rem;
         font-weight: 500;
         color: #79878D;
@@ -274,7 +253,7 @@ button.btn {
 
     .account_number_sender {
         position: absolute;
-        top: 17.3rem;
+        top: calc(17.35rem - var(--deviation));
         right: 1rem;
         font-size: 13px;
         font-weight: 400;
@@ -282,7 +261,7 @@ button.btn {
 
     .recipient_sender {
         position: absolute;
-        top: 18.4rem;
+        top: calc(18.4rem - var(--deviation));
         right: 1rem;
         font-weight: 400;
         font-size: 13px;
@@ -290,7 +269,7 @@ button.btn {
 
     .account_number {
         position: absolute;
-        top: 20.4rem;
+        top: calc(20.4rem - var(--deviation));
         right: 1rem;
         font-weight: 600;
         font-size: 13px;
@@ -298,7 +277,7 @@ button.btn {
 
     .recipient {
         position: absolute;
-        top: 21.5rem;
+        top: calc(21.5rem - var(--deviation));
         right: 1rem;
         font-weight: 600;
         font-size: 13px;
@@ -306,7 +285,7 @@ button.btn {
 
     .amount {
         position: absolute;
-        top: 25.75rem;
+        top: calc(25.75rem - var(--deviation));
         right: 1rem;
         font-weight: bold;
         font-size: 12px;
@@ -320,7 +299,7 @@ button.btn {
 
     .amount_text {
         position: absolute;
-        top: 26.85rem;
+        top: calc(26.85rem - var(--deviation));
         right: 1rem;
         font-weight: 500;
         font-size: 12px;
@@ -329,28 +308,29 @@ button.btn {
 
     .transfer_note {
         position: absolute;
-        top: 31rem;
+        top: calc(31.1rem - var(--deviation));
         right: 1rem;
         font-weight: 400;
         font-size: 12px;
+        max-width: 13rem;
+        text-align: end;
     }
 }
 
 .view.vpbank {
     .phone_time {
         position: absolute;
-        top: 1.15rem;
+        top: calc(1.15rem - var(--deviation));
         left: 1.7rem;
         font-weight: 500;
         color: #000;
         font-size: 13px;
         text-transform: uppercase;
-
     }
 
     .amount {
         position: absolute;
-        top: 11.3rem;
+        top: calc(11.3rem - var(--deviation));
         left: 4.7rem;
         font-weight: 600;
         font-size: 32px;
@@ -359,7 +339,7 @@ button.btn {
 
     .recipient {
         position: absolute;
-        top: 17.75rem;
+        top: calc(17.75rem - var(--deviation));
         left: 4.7rem;
         font-weight: 600;
         font-size: 15px;
@@ -369,7 +349,7 @@ button.btn {
 
     .account_number {
         position: absolute;
-        top: 18.95rem;
+        top: calc(18.95rem - var(--deviation));
         left: 4.7rem;
         font-weight: 600;
         font-size: 14px;
@@ -378,7 +358,7 @@ button.btn {
 
     .bill_time {
         position: absolute;
-        top: 23rem;
+        top: calc(23rem - var(--deviation));
         right: 1.7rem;
         font-weight: 600;
         font-size: 13px;
@@ -386,7 +366,7 @@ button.btn {
 
     .transfer_note {
         position: absolute;
-        top: 25.3rem;
+        top: calc(25.3rem - var(--deviation));
         right: 1.7rem;
         max-width: 20rem;
         font-weight: 600;
@@ -399,7 +379,7 @@ button.btn {
 
     .transfer_type {
         position: absolute;
-        top: 29.15rem;
+        top: calc(29.15rem - var(--deviation));
         right: 1.7rem;
         font-weight: 600;
         font-size: 13px;
@@ -411,10 +391,10 @@ button.btn {
 
     .transaction_code {
         position: absolute;
-        top: 32.3rem;
+        top: calc(32.3rem - var(--deviation));
         right: 1.7rem;
         font-weight: 600;
-        font-size: 13px
+        font-size: 13px;
     }
 }
 

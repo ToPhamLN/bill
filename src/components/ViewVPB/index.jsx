@@ -7,7 +7,7 @@ const ViewVPB = ({ form }) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   }
   return (
-    <div className='view vpbank'>
+    <div className='view vpbank capture'>
       <div className='background'>
         <img src={imageSrc} alt='' />
       </div>
@@ -18,7 +18,7 @@ const ViewVPB = ({ form }) => {
       <div className='account_number'>{form.accountNumber}</div>
       <div className='transaction_code'>{form.transactionCode}</div>
       <div className='transfer_note'>{form.transferNote}</div>
-      <div className='transfer_type'>chuyển nhanh napas 247</div>
+      <div className='transfer_type'>Chuyển nhanh napas 247</div>
     </div>
   );
 };

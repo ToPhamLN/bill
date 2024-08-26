@@ -10,9 +10,8 @@ const ViewVTB = ({ form }) => {
     return maskedPart + lastFourDigits;
   };
   function convertNumberToWords(number) {
-    const units = ['', 'nghìn', 'triệu', 'tỷ'];
-    const numberWords = [
-      'không',
+    const units = [
+      '',
       'một',
       'hai',
       'ba',
@@ -23,59 +22,74 @@ const ViewVTB = ({ form }) => {
       'tám',
       'chín'
     ];
+    const tens = [
+      '',
+      'mười',
+      'hai mươi',
+      'ba mươi',
+      'bốn mươi',
+      'năm mươi',
+      'sáu mươi',
+      'bảy mươi',
+      'tám mươi',
+      'chín mươi'
+    ];
 
-    if (number === 0) return 'không đồng';
+    function readThreeDigits(num) {
+      let hundred = Math.floor(num / 100);
+      let ten = Math.floor((num % 100) / 10);
+      let unit = num % 10;
+      let result = '';
 
-    let result = '';
-    let unitIndex = 0;
-
-    while (number > 0) {
-      let threeDigits = number % 1000;
-      if (threeDigits > 0) {
-        let words = convertThreeDigits(threeDigits);
-        result = words + ' ' + units[unitIndex] + ' ' + result;
+      if (hundred > 0) {
+        result += `${units[hundred]} trăm `;
       }
-      unitIndex++;
-      number = Math.floor(number / 1000);
+
+      if (ten > 0) {
+        result += `${tens[ten]} `;
+      } else if (hundred > 0 && unit > 0) {
+        result += 'lẻ ';
+      }
+
+      if (unit > 0) {
+        if (unit === 5 && ten !== 0) {
+          result += 'lăm';
+        } else {
+          result += units[unit];
+        }
+      }
+
+      return result.trim();
     }
 
-    return result.trim() + ' đồng';
+    function convertToWords(num) {
+      if (num === 0) return 'Không đồng';
 
-    function convertThreeDigits(num) {
-      let hundreds = Math.floor(num / 100);
-      let tens = Math.floor((num % 100) / 10);
-      let units = num % 10;
+      const bigUnits = ['', 'nghìn', 'triệu', 'tỷ'];
+      const parts = [];
+      let i = 0;
 
-      let words = '';
-      if (hundreds > 0) {
-        words += numberWords[hundreds] + ' trăm ';
-        if (tens === 0 && units > 0) {
-          words += 'lẻ ';
+      while (num > 0) {
+        const chunk = num % 1000;
+        if (chunk > 0) {
+          const chunkInWords = readThreeDigits(chunk);
+          const unit = bigUnits[i];
+          parts.unshift(`${chunkInWords} ${unit}`.trim());
         }
+        num = Math.floor(num / 1000);
+        i++;
       }
 
-      if (tens > 0) {
-        if (tens === 1) {
-          words += 'mười ';
-        } else {
-          words += numberWords[tens] + ' mươi ';
-        }
-      }
+      let result = parts.join(', ') + ' đồng';
 
-      if (units > 0) {
-        if (tens > 0 && units === 5) {
-          words += 'lăm';
-        } else {
-          words += numberWords[units];
-        }
-      }
-
-      return words.trim();
+      return result.charAt(0).toUpperCase() + result.slice(1);
     }
+
+    return convertToWords(number).replace(/, đồng$/, ' đồng');
   }
 
   return (
-    <div className='view viettinbank'>
+    <div className='view viettinbank capture'>
       <div className='background'>
         <img src={imageSrc} alt='' />
       </div>

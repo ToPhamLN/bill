@@ -4,13 +4,11 @@ import imageSrc from '~/assets/images/momo.png';
 const ViewMomo = ({ form }) => {
   console.log(imageSrc);
   return (
-    <div className='view momo'>
+    <div className='view momo capture'>
       <div className='background'>
         <img src={imageSrc} alt='' />
       </div>
-      {/* <div className='phone_time'>{form.phoneTime}</div> */}
-
-      <div className='success'>miễn phí</div>
+      <div className='success'>Miễn phí</div>
       <div className='amount'>{`-${parseInt(form.amount)?.toLocaleString(
         'vi-VN'
       )}đ`}</div>
