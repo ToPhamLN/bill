@@ -4,7 +4,7 @@ import imageSrc from '~/assets/images/momo.png';
 const ViewMomo = ({ form }) => {
   console.log(imageSrc);
   return (
-    <div className='view momo capture'>
+    <div className='view momo'>
       <div className='background'>
         <img src={imageSrc} alt='' />
       </div>

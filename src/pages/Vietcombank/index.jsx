@@ -7,7 +7,7 @@ import html2canvas from 'html2canvas';
 const Vietcombank = () => {
   const [form, setForm] = useState({
     accountNumber: '1212004',
-    recipientName: 'Nguyễn Văn A',
+    recipientName: 'NGUYEN VAN A',
     amount: 100000,
     bankName: 'VCB',
     transferType: 'FAST',
@@ -33,8 +33,11 @@ const Vietcombank = () => {
   };
 
   const handleCapture = async () => {
-    const element = document.querySelector('.view'),
-      canvas = await html2canvas(element),
+    const element = document.querySelector('.view');
+
+    element.classList.add('capture');
+
+    const canvas = await html2canvas(element),
       data = canvas.toDataURL('image/jpg'),
       link = document.createElement('a');
 
@@ -44,6 +47,8 @@ const Vietcombank = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    element.classList.remove('capture');
   };
 
   return (
@@ -70,7 +75,7 @@ const Vietcombank = () => {
               name='recipientName'
               value={form.recipientName}
               onChange={handleChange}
-              placeholder='Ví dụ: Nguyễn Văn A'
+              placeholder='Ví dụ: NGUYEN VAN A'
             />
           </div>
           <div className='item'>

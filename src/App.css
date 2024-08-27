@@ -48,7 +48,7 @@ button.btn {
         position: absolute;
         top: calc(0.76rem - var(--deviation));
         left: 1.2rem;
-        font-weight: 400;
+        font-weight: 500;
         color: #FCFCFC;
         font-size: 10px;
         text-transform: uppercase;
@@ -59,7 +59,7 @@ button.btn {
         top: calc(14.5rem - var(--deviation));
         left: 50%;
         transform: translateX(-50%);
-        font-weight: 400;
+        font-weight: 700;
         color: #fff;
         font-size: 13px;
         text-transform: uppercase;
@@ -74,7 +74,7 @@ button.btn {
         transform: translateX(-50%);
         color: #72BF00;
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: 700;
         text-transform: uppercase;
     }
 
@@ -85,7 +85,7 @@ button.btn {
         transform: translateX(-50%);
         color: #79878D;
         font-size: 11px;
-        font-weight: 500;
+        font-weight: 700;
     }
 
     .recipient {
@@ -93,7 +93,7 @@ button.btn {
         top: calc(23.55rem - var(--deviation));
         right: 1.2rem;
         transform: translateY(-50%);
-        font-weight: 500;
+        font-weight: 600;
         color: #fff;
         font-size: 14px;
         max-width: 13rem;
@@ -106,7 +106,7 @@ button.btn {
         position: absolute;
         top: calc(25.72rem - var(--deviation));
         right: 1.2rem;
-        font-weight: 500;
+        font-weight: 700;
         color: #fff;
         font-size: 14px;
         max-width: 13rem;
@@ -121,7 +121,7 @@ button.btn {
         top: calc(36.85rem - var(--deviation));
         right: 1.2rem;
         transform: translateY(-50%);
-        font-weight: 500;
+        font-weight: 700;
         color: #fff;
         font-size: 14px;
         max-width: 13rem;
@@ -134,10 +134,10 @@ button.btn {
         position: absolute;
         top: calc(39.6rem - var(--deviation));
         right: 1.2rem;
-        font-weight: 500;
+        font-weight: 700;
         color: #fff;
         font-size: 14px;
-        max-width: 13rem;
+        max-width: 11rem;
         height: 3rem;
         display: flex;
         align-items: center;

@@ -1,15 +1,13 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Input, Select, Button } from '@chakra-ui/react';
 import { EBank, ETransferType } from '~/constants/enum';
-import vcbbank from '~/assets/images/vcbbank.png';
-import ViewVCB from '~/components/ViewVCB';
 import html2canvas from 'html2canvas';
 import ViewMomo from '~/components/ViewMomo';
 
 const Momo = () => {
   const [form, setForm] = useState({
     accountNumber: '1212004',
-    recipientName: 'Nguyễn Văn A',
+    recipientName: 'NGUYEN VAN A',
     amount: 100000,
     bankName: 'VCB',
     transferType: 'FAST',
@@ -34,19 +32,24 @@ const Momo = () => {
     }));
   };
 
-  const handleCapture = () => {
-    const capture = document.querySelector('.view');
+  const handleCapture = async () => {
+    const element = document.querySelector('.view');
 
-    html2canvas(capture).then((canvas) => {
-      const imgData = canvas.toDataURL('image/jpg');
+    element.classList.add('capture');
 
-      const link = document.createElement('a');
-      link.href = imgData;
-      link.download = 'screenshot.jpg';
-      link.click();
-    });
+    const canvas = await html2canvas(element),
+      data = canvas.toDataURL('image/jpg'),
+      link = document.createElement('a');
+
+    link.href = data;
+    link.download = 'downloaded-image.jpg';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    element.classList.remove('capture');
   };
-  const imageSrc = vcbbank;
 
   return (
     <div className='main .light__theme'>
@@ -72,7 +75,7 @@ const Momo = () => {
               name='recipientName'
               value={form.recipientName}
               onChange={handleChange}
-              placeholder='Ví dụ: Nguyễn Văn A'
+              placeholder='Ví dụ: NGUYEN VAN A'
             />
           </div>
           <div className='item'>
@@ -169,7 +172,7 @@ const Momo = () => {
           <Button colorScheme='yellow' className='btn'>
             Xem Bill
           </Button>
-          <ViewMomo form={form} imageSrc={imageSrc} />
+          <ViewMomo form={form} />
           <Button colorScheme='blue' className='btn' onClick={handleCapture}>
             Tạo Bill
           </Button>

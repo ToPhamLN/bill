@@ -7,7 +7,7 @@ const ViewVPB = ({ form }) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   }
   return (
-    <div className='view vpbank capture'>
+    <div className='view vpbank'>
       <div className='background'>
         <img src={imageSrc} alt='' />
       </div>

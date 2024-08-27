@@ -1,8 +1,12 @@
-import Home from '~/pages/Home';
-import Momo from '~/pages/Momo';
-import Vietcombank from '~/pages/Vietcombank';
-import Viettinbank from '~/pages/Viettinbank';
-import Vpbank from '~/pages/Vpbank';
+// constants/routes.js
+
+import React from 'react';
+
+const Home = React.lazy(() => import('~/pages/Home'));
+const Vietcombank = React.lazy(() => import('~/pages/Vietcombank'));
+const Momo = React.lazy(() => import('~/pages/Momo'));
+const Viettinbank = React.lazy(() => import('~/pages/Viettinbank'));
+const Vpbank = React.lazy(() => import('~/pages/Vpbank'));
 
 export const path = {
   Home: '/',

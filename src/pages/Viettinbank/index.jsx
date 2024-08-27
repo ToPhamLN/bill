@@ -7,7 +7,7 @@ import html2canvas from 'html2canvas';
 const Viettinbank = () => {
   const [form, setForm] = useState({
     accountNumberSender: '1212004',
-    recipientNameSender: 'Nguyễn Văn A',
+    recipientNameSender: 'NGUYEN VAN A',
     accountNumber: '1212004',
     recipientName: 'Nguyễn Văn B',
     amount: 100000,
@@ -34,19 +34,24 @@ const Viettinbank = () => {
     }));
   };
 
-  const handleCapture = () => {
-    const capture = document.querySelector('.view');
+  const handleCapture = async () => {
+    const element = document.querySelector('.view');
 
-    html2canvas(capture).then((canvas) => {
-      const imgData = canvas.toDataURL('image/jpg');
+    element.classList.add('capture');
 
-      const link = document.createElement('a');
-      link.href = imgData;
-      link.download = 'screenshot.jpg';
-      link.click();
-    });
+    const canvas = await html2canvas(element),
+      data = canvas.toDataURL('image/jpg'),
+      link = document.createElement('a');
+
+    link.href = data;
+    link.download = 'downloaded-image.jpg';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    element.classList.remove('capture');
   };
-
   return (
     <div className='main .light__theme'>
       <div className='container'>
@@ -71,7 +76,7 @@ const Viettinbank = () => {
               name='recipientName'
               value={form.recipientName}
               onChange={handleChange}
-              placeholder='Ví dụ: Nguyễn Văn A'
+              placeholder='Ví dụ: NGUYEN VAN A'
             />
           </div>
           <div className='item'>

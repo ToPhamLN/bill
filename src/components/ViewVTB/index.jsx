@@ -89,7 +89,7 @@ const ViewVTB = ({ form }) => {
   }
 
   return (
-    <div className='view viettinbank capture'>
+    <div className='view viettinbank'>
       <div className='background'>
         <img src={imageSrc} alt='' />
       </div>

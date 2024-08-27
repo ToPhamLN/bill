@@ -17,9 +17,7 @@ const ViewVCB = ({ form }) => {
         form.amount
       )?.toLocaleString()} vnd`}</div>
       <div className='bill_time'>{form.billTime}</div>
-      <div className='recipient'>
-        <h1>{form.recipientName}</h1>
-      </div>
+      <div className='recipient'>{form.recipientName}</div>
       <div className='account_number'>{form.accountNumber}</div>
       <div className='transaction_code'>{form.transactionCode}</div>
       <div className='transfer_note'>{form.transferNote}</div>
