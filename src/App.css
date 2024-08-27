@@ -90,7 +90,7 @@ button.btn {
 
     .recipient {
         position: absolute;
-        top: calc(23.55rem - var(--deviation));
+        top: calc(23.5rem - var(--deviation));
         right: 1.2rem;
         transform: translateY(-50%);
         font-weight: 600;

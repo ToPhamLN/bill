@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Input, Select, Button } from '@chakra-ui/react';
 import { EBank, ETransferType } from '~/constants/enum';
 import ViewVPB from '~/components/ViewVPB';
-import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
 
 const Vpbank = () => {
   const [form, setForm] = useState({
@@ -32,25 +32,24 @@ const Vpbank = () => {
     }));
   };
 
+  function exportToJpeg(dom) {
+    domtoimage
+      .toJpeg(dom, { quality: 1 })
+      .then(function (dataUrl) {
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = `${form.recipientName}-${form.accountNumber}.jpeg`;
+        link.click();
+      })
+      .catch(function (error) {
+        console.error('Oops, something went wrong!', error);
+      });
+  }
+
   const handleCapture = async () => {
-    const element = document.querySelector('.view');
-
-    element.classList.add('capture');
-
-    const canvas = await html2canvas(element),
-      data = canvas.toDataURL('image/jpg'),
-      link = document.createElement('a');
-
-    link.href = data;
-    link.download = 'downloaded-image.jpg';
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    element.classList.remove('capture');
+    const element = document.querySelector('.capture');
+    exportToJpeg(element);
   };
-
   return (
     <div className='main .light__theme'>
       <div className='container'>

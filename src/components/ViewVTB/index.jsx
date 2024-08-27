@@ -89,26 +89,28 @@ const ViewVTB = ({ form }) => {
   }
 
   return (
-    <div className='view viettinbank'>
-      <div className='background'>
-        <img src={imageSrc} alt='' />
+    <div className='capture'>
+      <div className='view viettinbank'>
+        <div className='background'>
+          <img src={imageSrc} alt='' />
+        </div>
+        <div className='phone_time'>{form.phoneTime}</div>
+        <div className='amount'>{`${parseInt(
+          form.amount
+        )?.toLocaleString()} vnd`}</div>
+        <div className='amount_text'>{`${convertNumberToWords(
+          parseInt(form.amount)
+        )}`}</div>
+        <div className='bill_time'>{form.billTime}</div>
+        <div className='recipient_sender'>{form.recipientNameSender}</div>
+        <div className='account_number_sender'>
+          {formatNumber(form.accountNumberSender)}
+        </div>
+        <div className='recipient'>{form.recipientName}</div>
+        <div className='account_number'>{form.accountNumber}</div>
+        <div className='transaction_code'>{form.transactionCode}</div>
+        <div className='transfer_note'>{form.transferNote}</div>
       </div>
-      <div className='phone_time'>{form.phoneTime}</div>
-      <div className='amount'>{`${parseInt(
-        form.amount
-      )?.toLocaleString()} vnd`}</div>
-      <div className='amount_text'>{`${convertNumberToWords(
-        parseInt(form.amount)
-      )}`}</div>
-      <div className='bill_time'>{form.billTime}</div>
-      <div className='recipient_sender'>{form.recipientNameSender}</div>
-      <div className='account_number_sender'>
-        {formatNumber(form.accountNumberSender)}
-      </div>
-      <div className='recipient'>{form.recipientName}</div>
-      <div className='account_number'>{form.accountNumber}</div>
-      <div className='transaction_code'>{form.transactionCode}</div>
-      <div className='transfer_note'>{form.transferNote}</div>
     </div>
   );
 };
